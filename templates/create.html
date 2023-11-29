@@ -13,5 +13,17 @@
      <textarea name="full_content" placeholder="Введите текст статьи" class="form-control" rows="8" cols="40"></textarea><br>
     <button class="btn btn-success" type="submit">Добавить</button>
 </form>
+<body>
+    <!-- Your body content here -->
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                alert("{{ messages[0] }}");
+            </script>
+        {% endif %}
+    {% endwith %}
+</body>
+
 {% endblock %}
 

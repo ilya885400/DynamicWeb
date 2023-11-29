@@ -1,8 +1,10 @@
 from flask import Flask, render_template,\
-    request, redirect, abort
+    request, redirect, abort, flash
+
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.secret_key = '69'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newflask.db'
 db = SQLAlchemy(app)
 
@@ -43,7 +45,8 @@ def create():
         text = request.form['text']
         full_content = request.form['full_content']
         if not title or not text or not full_content:
-            return 'Please fill out all the fields.'
+            flash('Please fill out all the fields.', 'error')
+            return render_template("create.html")
 
         post = Post(title=title, text=text, full_content=full_content)
 
@@ -52,7 +55,8 @@ def create():
             db.session.commit()
             return redirect('/')
         except:
-            return 'При добавлении статьи произошла ошибка!'
+            flash('An error occurred while adding the post!', 'error')
+
     else:
         return render_template("create.html")
 
