@@ -7,26 +7,47 @@
 {% endblock %}
 
 
-{% block content %}
-<h1>{{ post.title }}</h1>
-<p><strong>{{ post.text }}</strong></p>
-<p></p>
-<p>{{ post.full_content }}</p>
+{% block content %}<style>
+    .post-container {
+        border: 2px solid white; /* Ширина и цвет рамки */
+        padding: 20px; /* Внутренний отступ внутри рамки */
+        max-width: 900px; /* Максимальная ширина контейнера */
+        margin: auto; /* Центрирование по горизонтали */
+        overflow: hidden; /* Ограничение по размерам */
+        background-color: white; /* Белый фон внутри контейнера */
+    }
+
+    .post-container img {
+        max-width: 100%; /* Сделать изображение адаптивным */
+        height: auto; /* Поддерживать пропорции */
+        display: block; /* Избежать отступов снизу */
+        margin: auto; /* Центрирование по горизонтали */
+        margin-bottom: 15px; /* Отступ снизу от изображения */
+    }
+
+    .gray-text {
+        color: gray; /* Серый цвет текста */
+    }
+
+    .readable-text {
+        font-size: 20px; /* Размер шрифта */
+        line-height: 1.6; /* Междустрочное расстояние */
+        margin-bottom: 15px; /* Отступ снизу текста */
+    }
+</style>
+
+<div class="post-container">
+    <h1>{{ post.title }}</h1>
+    <p class="readable-text"> <strong>{{ post.text }}</strong></p>
+    <p></p>
+    {% if post.image_url %}
+        <img src="{{ post.image_url }}" alt="Post Image">
+    {% endif %}
+    <p class="readable-text">{{ post.full_content }}</p>
+    <a href="{{ url_for('posts') }}" class="gray-text">Назад к списку постов</a>
+</div>
+
+
 {% endblock %}
 
 
-<!-- templates/post.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text }}</p>
-    <p>{{ post.full_content }}</p>
-    <a href="{{ url_for('posts') }}">Назад к списку постов</a>
-</body>
-</html>
