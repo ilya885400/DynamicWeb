@@ -21,6 +21,7 @@ class Post(db.Model):
     title = db.Column(db.String(300), nullable=False)
     text = db.Column(db.Text, nullable=False)
     full_content = db.Column(db.Text, nullable=False)
+    image_url = db.Column(db.String(300))
 
 
 @app.route("/")
@@ -44,11 +45,13 @@ def create():
         title = request.form['title']
         text = request.form['text']
         full_content = request.form['full_content']
+        image_url = request.form.get('image_url')
+
         if not title or not text or not full_content:
             flash('Please fill out all the fields.', 'error')
             return render_template("create.html")
 
-        post = Post(title=title, text=text, full_content=full_content)
+        post = Post(title=title, text=text, full_content=full_content, image_url=image_url)
 
         try:
             db.session.add(post)
@@ -56,6 +59,7 @@ def create():
             return redirect('/')
         except:
             flash('An error occurred while adding the post!', 'error')
+            return render_template("create.html")
 
     else:
         return render_template("create.html")

@@ -11,22 +11,12 @@
 <h1>{{ post.title }}</h1>
 <p><strong>{{ post.text }}</strong></p>
 <p></p>
+{% if post.image_url %}
+        <img src="{{ post.image_url }}" alt="Post Image">
+    {% endif %}
 <p>{{ post.full_content }}</p>
+<a href="{{ url_for('posts') }}">Назад к списку постов</a>
+
 {% endblock %}
 
 
-<!-- templates/post.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text }}</p>
-    <p>{{ post.full_content }}</p>
-    <a href="{{ url_for('posts') }}">Назад к списку постов</a>
-</body>
-</html>
