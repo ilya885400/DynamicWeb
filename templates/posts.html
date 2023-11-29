@@ -16,7 +16,7 @@
         <h4>{{ post.title }}</h4>
         <div class="seperator"></div>
         <p>{{ post.text }}</p>
-        <a href="#">Читать далее
+        <a href="{{ url_for('post', post_id=post.id) }}">Читать далее
           <i class="fa fa-long-arrow-right"></i>
         </a>
       </div>
