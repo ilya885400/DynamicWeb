@@ -38,8 +38,8 @@
 
 <div class="post-container">
     <h1>{{ post.title }}</h1>
-    <p class="readable-text"> <strong>{{ post.text }}</strong></p>
-    <p></p>
+    <p class="readable-text"><strong>{{ post.text }}</strong></p>
+    <p>Автор: {{ post.author.name }}</p>
     {% if post.image_url %}
         <img src="{{ post.image_url }}" alt="Post Image">
     {% endif %}
