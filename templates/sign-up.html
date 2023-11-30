@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nice dark sign in form</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+  <h1>Sign In Form</h1>
+  <div id="wrapper">
+    <form id="signin" method=" " action="{{ url_for('login') }}" autocomplete="off">
+      <input type="text" id="user" name="user" placeholder="username" />
+      <input type="password" id="pass" name="pass" placeholder="password" />
+      <input type="text" id="email" name="email" placeholder="email" />
+      <button type="submit">&#xf0da;</button>
+    </form>
+  </div>
+</body>
+</html>

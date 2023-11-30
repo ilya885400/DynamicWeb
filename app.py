@@ -38,6 +38,14 @@ def posts():
 def about():
     return render_template('about.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/sign-up')
+def signup():
+    return render_template('sign-up.html')
+
 
 @app.route("/create", methods=['POST', 'GET'])
 def create():

@@ -7,7 +7,7 @@ header {
 }
 
 body{
-    background-color: #F3E98B;
+    background-color: yellow;
 }
 /* POSTS */
 .row {
@@ -15,7 +15,7 @@ body{
 }
 .seperator {
   margin-bottom: 30px;
-  width: 35px;z
+  width: 35px;
   height: 3px;
   background: #777;
   border: none;
@@ -77,7 +77,7 @@ body{
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
-  color: #F3E98B;
+  color: #666666;
   margin-top: 10px;
 }
 .item a i {
@@ -98,12 +98,3 @@ body{
   font-weight: 300;
 }
 
-.title_for_main_page {
-    padding-left : 50px;
-    padding-top : 20px;
-}
-
-.main_page_text {
-    padding-top : 10px;
-    font-size : 120%;
-}
