@@ -23,13 +23,13 @@ h1{
 }
 
 /* === Sign in Form === */
-#signin {
+#login, #signup {
 	height: 90px;
 	width: 300px;
 	border-radius: 8px;
 	position: relative;
 }
-#signin::before {
+#login::before, #signup::before {
 	display: block;
 	position: relative;
 	height: 2px;
@@ -39,20 +39,22 @@ h1{
 	margin-left: 20px;
 	z-index: 1;
 }
-#signin input:first-of-type{
+#login input:first-of-type, #signup input:first-of-type{
 	border-top-right-radius: 8px;
 	border-top-left-radius: 8px;
 }
-#signin input:last-of-type{
+#login input:last-of-type{
 	border-bottom-right-radius: 8px;
 	border-bottom-left-radius: 8px;
 }
-#signin  input[type="text"], #signin  input[type="password"], #signin button[type="submit"]{
+#login  input[type="text"], #login  input[type="password"], #login button[type="submit"],
+#signup  input[type="text"], #signup input[type="password"], #signup button[type="submit"] {
 	background: rgb(28, 30, 33);
 	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
 	color: rgb(52, 56, 61);
 }
-#signin  input[type="text"], #signin  input[type="password"]{
+#login  input[type="text"], #login input[type="password"],
+#signup  input[type="text"], #signup input[type="password"]{
 	position: relative;
 	display: block;
 	width: 280px;
@@ -63,10 +65,11 @@ h1{
 	padding: 0 0 0 20px;
 	font-weight: 700;
 }
-#signin  input[type="text"]:focus, #signin  input[type="password"]:focus{
+#login  input[type="text"]:focus, #login input[type="password"]:focus,
+#signup  input[type="text"]:focus, #signup input[type="password"]:focus{
 	color: rgb(255, 255, 255);
 }
-#signin button[type="submit"]{
+#login button[type="submit"], #signup button[type="submit"]{
 	display: block;
 	position: absolute;
 	width: 52px;
@@ -84,22 +87,23 @@ h1{
 	padding-bottom: 3px;
 	text-align: center;
 }
-#signin button[type="submit"]:hover{
+#login button[type="submit"]:hover,
+#signup button[type="submit"]:hover{
 	color: rgb(0, 126, 165);
 	text-shadow: 0 0 10px rgb(0, 126, 165);
 	cursor: pointer;
 }
-#signin p {
+#login p, #signup p {
 	color: rgb(79, 85, 97);
 	padding: 0 20px;
 	font-weight: 700;
 	font-size: 12px;
 	margin: 5px 0 0 0;
 }
-#signin p > a{
+#login p > a, #signup p > a{
 	color: rgb(111, 119, 135);
 	text-decoration: none;
 }
-#signin p > a:hover{
+#login p > a:hover , #signup p > a:hover{
 	border-bottom: 1px solid;
 }
