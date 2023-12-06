@@ -6,12 +6,16 @@
 
 
 {% block content %}
-<h1>Добавление записи</h1>
-<form method="post" class="form-control">
-    <input type="text" name="title" placeholder="Введите заголовок статьи" class="form-control"><br>
-    <input type="text" name="text" placeholder="Введите описание статьи" class="form-control"><br>
-    <textarea name="full_content" placeholder="Введите текст статьи" class="form-control" rows="8" cols="40"></textarea><br>
-    <input type="text" name="image_url" placeholder="URL изображения" class="form-control"><br>
+<h1 class="title_for_main_page">Расскажите что-то интересное</h1>
+<form method="post" class="for_add_inputs1">
+    <input type="text" name="title" placeholder="Введите заголовок статьи" class="for_add_inputs2"><br>
+    <p></p>
+    <input type="text" name="text" placeholder="Введите описание статьи" class="for_add_inputs2"><br>
+    <p></p>
+    <textarea name="full_content" placeholder="Введите текст статьи" class="for_add_inputs2" rows="8" cols="40"></textarea><br>
+    <p></p>
+    <input type="text" name="image_url" placeholder="URL изображения" class="for_add_inputs2"><br>
+    <p></p>
     <button class="btn btn-success" type="submit">Добавить</button>
 </form>
 

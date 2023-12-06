@@ -107,3 +107,20 @@ body{
     padding-top : 10px;
     font-size : 120%;
 }
+
+.for_add_inputs1{
+     padding-top : 20px;
+     padding-left : 20px;
+     padding-bottom : 10px;
+     background: #333333;
+     border-radius : 20px;
+}
+
+.for_add_inputs2{
+     padding-left : 10px;
+     padding-top : 10px;
+     padding-bottom : 10px;
+     background: #F9F3BB;
+     width : 1200px;
+     border-radius : 5px;
+}
