@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Post - {{ post.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Edit Post</h1>
+    <form method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ post.title }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Text</label>
+            <textarea class="form-control" id="text" name="text" rows="5" required>{{ post.text }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="full_content" class="form-label">Full Content</label>
+            <textarea class="form-control" id="full_content" name="full_content" rows="10" required>{{ post.full_content }}</textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image_url" class="form-label">Image URL</label>
+            <input type="text" class="form-control" id="image_url" name="image_url" value="{{ post.image_url }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Post</button>
+    </form>
+</div>
+{% endblock %}
