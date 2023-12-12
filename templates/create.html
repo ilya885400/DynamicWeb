@@ -9,13 +9,28 @@
 {% if not empty %}
         <!-- ваша форма для создания поста -->
 <h1>Добавление записи</h1>
-<form method="post" class="form-control">
+<form method="post" class="form-control" enctype="multipart/form-data">
     <input type="text" name="title" placeholder="Введите заголовок статьи" class="form-control"><br>
     <input type="text" name="text" placeholder="Введите описание статьи" class="form-control"><br>
     <textarea name="full_content" placeholder="Введите текст статьи" class="form-control" rows="8" cols="40"></textarea><br>
-    <input type="text" name="image_url" placeholder="URL изображения" class="form-control"><br>
+
+    <label for="image_file">Image:</label>
+    <input type="file" name="image_file" id="image_file" style="display: none;" onchange="updateFileName()">
+    <button type="button" class="file-upload-btn" onclick="document.getElementById('image_file').click()">Choose File</button>
+    <span id="file-name"></span>
+    <br>
+    <p></p>
     <button class="btn btn-success" type="submit">Добавить</button>
 </form>
+
+<script>
+    function updateFileName() {
+        var fileName = document.getElementById('image_file').value.split('\\').pop();
+        document.getElementById('file-name').innerText = fileName;
+    }
+</script>
+
+
 
 {% endif %}
 
