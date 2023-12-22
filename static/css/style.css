@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css');
+
+*{
+	font-family: 'Open Sans', 'sans-serif', 'FontAwesome';
+}
+body{
+    background: rgb(52, 56, 61);
+}
+h1{
+	color: rgb(255, 255, 255);
+	margin: 20px auto 0;
+	width: 200px;
+	text-align: center;
+}
+#wrapper{
+	position: absolute;
+	width: 320px;
+	left: 50%;
+	margin-left: -160px;
+	top: 50%;
+	margin-top: -75px;
+}
+
+/* === Sign in Form === */
+#login, #signup {
+	height: 90px;
+	width: 300px;
+	border-radius: 8px;
+	position: relative;
+}
+#login::before, #signup::before {
+	display: block;
+	position: relative;
+	height: 2px;
+	background: rgb(52, 56, 61);
+	content: '';
+	top: 44px;
+	margin-left: 20px;
+	z-index: 1;
+}
+#login input:first-of-type, #signup input:first-of-type{
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+}
+#login input:last-of-type{
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+#login  input[type="text"], #login  input[type="password"], #login button[type="submit"],
+#signup  input[type="text"], #signup input[type="password"], #signup button[type="submit"] {
+	background: rgb(28, 30, 33);
+	box-shadow: inset -100px -100px 0 rgb(28, 30, 33); /*Prevent yellow autofill color*/
+	color: rgb(52, 56, 61);
+}
+#login  input[type="text"], #login input[type="password"],
+#signup  input[type="text"], #signup input[type="password"]{
+	position: relative;
+	display: block;
+	width: 280px;
+	height: 45px;
+	border: 0;
+	outline: 0;
+	top: -2px;
+	padding: 0 0 0 20px;
+	font-weight: 700;
+}
+#login  input[type="text"]:focus, #login input[type="password"]:focus,
+#signup  input[type="text"]:focus, #signup input[type="password"]:focus{
+	color: rgb(255, 255, 255);
+}
+#login button[type="submit"], #signup button[type="submit"]{
+	display: block;
+	position: absolute;
+	width: 52px;
+	height: 52px;
+	color: rgb(52, 56, 61);
+	border-radius: 50px;
+	outline: 0;
+	z-index: 2;
+	top: 19px;
+	right: -24px;
+	border: 6px solid rgb(52, 56, 61);
+	font-size: 25px;
+	text-indent: 0px;
+	padding-left: 9px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+#login button[type="submit"]:hover,
+#signup button[type="submit"]:hover{
+	color: rgb(0, 126, 165);
+	text-shadow: 0 0 10px rgb(0, 126, 165);
+	cursor: pointer;
+}
+#login p, #signup p {
+	color: rgb(79, 85, 97);
+	padding: 0 20px;
+	font-weight: 700;
+	font-size: 12px;
+	margin: 5px 0 0 0;
+}
+#login p > a, #signup p > a{
+	color: rgb(111, 119, 135);
+	text-decoration: none;
+}
+#login p > a:hover , #signup p > a:hover{
+	border-bottom: 1px solid;
+}
+
+/* Ваш стиль для кнопки загрузки файла */
+.file-upload-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    border-radius: 5px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-btn:hover {
+    background-color: #3498db;
+    color: white;
+}

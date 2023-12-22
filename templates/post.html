@@ -38,13 +38,22 @@
 
 <div class="post-container">
     <h1>{{ post.title }}</h1>
-    <p class="readable-text"> <strong>{{ post.text }}</strong></p>
-    <p></p>
-    {% if post.image_url %}
-        <img src="{{ post.image_url }}" alt="Post Image">
+    <p class="readable-text"><strong>{{ post.text }}</strong></p>
+    <p>Автор: {{ post.author.name }}</p>
+    {% if post.image_filename %}
+        <img src="{{ url_for('static', filename='img/uploads/' + post.image_filename) }}" alt="Post Image">
     {% endif %}
-    <p class="readable-text">{{ post.full_content }}</p>
+    <p class="readable-text">{{ post.full_content }} </p>
+
+    {% if current_user() and current_user().id == post.author.id %}
+        <a href="{{ url_for('edit_post', post_id=post.id) }}" class="btn btn-primary">Редактировать</a>
+        <a href="{{ url_for('delete_post_confirm', post_id=post.id) }}" class="btn btn-danger">Удалить</a>
+    {% endif %}
+    <p> </p>
+    <p class="gray-text">Дата добавления: {{ post.created_at.strftime('%Y-%m-%d') }}</p>
     <a href="{{ url_for('posts') }}" class="gray-text">Назад к списку постов</a>
+
+
 </div>
 
 
