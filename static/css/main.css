@@ -1,0 +1,126 @@
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    padding: 100px;
+    z-index: 1000;
+}
+
+body{
+    background-color: #F3E98B;
+}
+/* POSTS */
+.row {
+  padding: 50px 0;
+}
+.seperator {
+  margin-bottom: 30px;
+  width: 35px;z
+  height: 3px;
+  background: #777;
+  border: none;
+}
+.title {
+  text-align: center;
+}
+.title .row {
+  padding: 50px 0 0;
+}
+.title h1 {
+  text-transform: uppercase;
+}
+.title .seperator {
+  margin: 0 auto 10px;
+}
+.item {
+  position: relative;
+  margin-bottom: 30px;
+  min-height: 1px;
+  float: left;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.item .item-in {
+  background: #fff;
+  padding: 40px;
+  position: relative;
+}
+.item .item-in:hover:before {
+  width: 100%;
+}
+.item .item-in::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 0%;
+  background: #333333;
+  right: 0px;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+.item h4 {
+  font-size: 18px;
+  margin-top: 25px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.item p {
+  font-size: 12px;
+}
+.item a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #F3E98B;
+  margin-top: 10px;
+}
+.item a i {
+  opacity: 0;
+  padding-left: 0px;
+  transition: 0.4s;
+  font-size: 24px;
+  display: inline-block;
+  top: 5px;
+  position: relative;
+}
+.item a:hover {
+  text-decoration: none;
+}
+.item a:hover i {
+  padding-left: 10px;
+  opacity: 1;
+  font-weight: 300;
+}
+
+.title_for_main_page {
+    padding-left : 50px;
+    padding-top : 20px;
+}
+
+.main_page_text {
+    padding-top : 10px;
+    font-size : 120%;
+}
+
+.for_add_inputs1{
+     padding-top : 20px;
+     padding-left : 20px;
+     padding-bottom : 10px;
+     background: rgba(45,45,45,0.7);
+
+}
+
+.for_add_inputs2{
+     padding-left : 10px;
+     padding-top : 10px;
+     padding-bottom : 10px;
+     background: #F9F3BB;
+     width : 1200px;
+     border-radius : 5px;
+}
